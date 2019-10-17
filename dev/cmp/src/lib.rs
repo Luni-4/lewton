@@ -151,7 +151,7 @@ pub fn cmp_output<R :Read + Seek, T, F :Fn(usize, usize, usize,
 
 		let mut diffs = 0;
 		for (s,n) in dec_data.iter().zip(native_dec_data.iter()) {
-			let diff = (*s - *n) as i32;
+			let diff = i64::from(*s - *n);
 			// +- 1 deviation is allowed.
 			if diff.abs() > 1 {
 				diffs += 1;

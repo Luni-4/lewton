@@ -160,7 +160,6 @@ pub fn cmp_output<R :Read + Seek, T, F :Fn(usize, usize, usize,
 
 		let native_dec_len = native_dec_data.len();
 		let dec_len = dec_data.len();
-                eprintln!("Print the diffs {}", diffs);
 
 		if diffs > 0 || (!ignore_packet_borders && dec_len != native_dec_len) {
 
